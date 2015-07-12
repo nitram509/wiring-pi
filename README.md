@@ -25,11 +25,24 @@ in wiringPi fixed certain RaspPi2 issues.
 
 So I rolled up my sleeves up and started the pebbly way to patch wiring-pi. 
 
-## Install
 
-```
-npm install wiring-pi
-```
+## Install & Usage
+
+See https://github.com/eugeneware/wiring-pi 
+or https://github.com/Soarez/node-wiring-pi for details.
+
+
+## Known Issues
+
+In order to make the wrapper code compile, I had to make some decisions and changes.
+Mostly I used to delete code, when the compiler complained. This speeded up my monkey 
+patching and saved me time from investigating a better migration strategy.
+Be aware, that some features aren't supported in this fork.
+
+* dropped devlib/tcs34725 support
+* dropped extensions/pca9685 support
+* dropped pulseIn() method
+
 
 ## LED animation example
 

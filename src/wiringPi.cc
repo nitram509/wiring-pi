@@ -18,7 +18,7 @@ DECLARE(digitalWrite);
 DECLARE(pwmWrite);
 DECLARE(analogRead);
 DECLARE(analogWrite);
-DECLARE(pulseIn);
+//DECLARE(pulseIn);
 
 DECLARE(delay);
 DECLARE(delayMicroseconds);
@@ -343,27 +343,6 @@ IMPLEMENT(analogWrite) {
   SCOPE_CLOSE(UNDEFINED());
 }
 
-IMPLEMENT(pulseIn) {
-  SCOPE_OPEN();
-  
-  SET_ARGUMENT_NAME(0, pin);
-  SET_ARGUMENT_NAME(1, state);
-  
-  CHECK_ARGUMENTS_LENGTH_EQUAL(2);
-  
-  CHECK_ARGUMENT_TYPE_INT32(0);
-  CHECK_ARGUMENT_TYPE_INT32(1);
-  
-  int pin = GET_ARGUMENT_AS_INT32(0);
-  int state = GET_ARGUMENT_AS_INT32(1);
-  
-  CHECK_ARGUMENT_IN_INTS(1, state, (HIGH, LOW));
-  
-  int us = ::pulseIn(pin, state);
-  
-  SCOPE_CLOSE(INT32(us));
-}
-
 IMPLEMENT(delay) {
   SCOPE_OPEN();
   
@@ -676,7 +655,7 @@ IMPLEMENT_EXPORT_INIT(wiringPi) {
   EXPORT_FUNCTION(pwmWrite);
   EXPORT_FUNCTION(analogRead);
   EXPORT_FUNCTION(analogWrite);
-  EXPORT_FUNCTION(pulseIn);
+  // EXPORT_FUNCTION(pulseIn);
   
   EXPORT_FUNCTION(delay);
   EXPORT_FUNCTION(delayMicroseconds);
