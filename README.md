@@ -29,14 +29,14 @@ So I rolled up my sleeves up and started the pebbly way to patch wiring-pi.
 
 ## Install & Usage
 
-You may simple use ```npm``` and point it to this fork on Gihub: 
+You may simply use ```npm``` and point it to this fork on Github: 
 
 ```bash
 npm install nitram509/wiring-pi --save
 ```
 
-See https://github.com/eugeneware/wiring-pi 
-or https://github.com/Soarez/node-wiring-pi for details.
+For more details, see https://github.com/eugeneware/wiring-pi 
+or https://github.com/Soarez/node-wiring-pi
 
 
 ## Known Issues
