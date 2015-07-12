@@ -36,8 +36,6 @@ npm install wiring-pi
 ![LED animation with Raspberry Pi 2](/docs/raspberry_pi2_led_animation.gif?raw=true)
 
 ```javascript
-// patched version of https://github.com/eugeneware/wiring-pi
-// patched to work with latest http://wiringpi.com/ release (neede for RPi2)
 var wpi = require('/home/pi/wiring-pi/lib/exports.js');
 wpi.wiringPiSetup()
 
