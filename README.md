@@ -28,6 +28,12 @@ So I rolled up my sleeves up and started the pebbly way to patch wiring-pi.
 
 ## Install & Usage
 
+You may simple use ```npm``` and point it to this fork on Gihub: 
+
+```bash
+npm install nitram509/wiring-pi --save
+```
+
 See https://github.com/eugeneware/wiring-pi 
 or https://github.com/Soarez/node-wiring-pi for details.
 
@@ -42,6 +48,7 @@ Be aware, that some features aren't supported in this fork.
 * dropped devlib/tcs34725 support
 * dropped extensions/pca9685 support
 * dropped pulseIn() method
+* only works with node.js 0.10.x (and *not* compatible with 0.12.x, because of V8 API change)
 
 
 ## LED animation example
