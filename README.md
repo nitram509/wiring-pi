@@ -25,6 +25,7 @@ in wiringPi fixed certain RaspPi2 issues.
 
 So I rolled up my sleeves up and started the pebbly way to patch wiring-pi. 
 
+... mission accomplished :-)
 
 ## Install & Usage
 
