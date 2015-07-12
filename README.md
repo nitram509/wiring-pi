@@ -31,8 +31,36 @@ So I rolled up my sleeves up and started the pebbly way to patch wiring-pi.
 npm install wiring-pi
 ```
 
-## Usage
+## LED animation example
+
+![LED animation with Raspberry Pi 2](/docs/raspberry_pi2_led_animation.gif?raw=true)
 
 ```javascript
-var wpi = require('wiring-pi');
+// patched version of https://github.com/eugeneware/wiring-pi
+// patched to work with latest http://wiringpi.com/ release (neede for RPi2)
+var wpi = require('/home/pi/wiring-pi/lib/exports.js');
+wpi.wiringPiSetup()
+
+// for pinout, see http://pi.gadgetoid.com/pinout
+var LED_PINS_WiringPi = [8, 9, 7, 0, 1];
+
+for (var i=0; i < LED_PINS_WiringPi.length; i++) {
+  wpi.pinMode(LED_PINS_WiringPi[i], wpi.OUTPUT);
+}
+
+var values = [1,1,1,1,1];
+var index = 0;
+
+setInterval(function() {
+  // previous LED
+  var pin = LED_PINS_WiringPi[index];
+  values[index] = +!values[index];
+  wpi.digitalWrite(pin, values[index]);
+
+  // next LED
+  index = (index + 1) % LED_PINS_WiringPi.length;
+  pin = LED_PINS_WiringPi[index];
+  wpi.digitalWrite(pin, values[index]);
+}, 50);
 ```
+
