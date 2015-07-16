@@ -51,8 +51,12 @@ Be aware, that some features aren't supported in this fork.
 * dropped pulseIn() method
 * only works with node.js 0.10.x (and *not* compatible with 0.12.x, because of V8 API change)
 
+## LED animation platine & layout
 
-## LED animation example
+http://fritzing.org/projects/raspberry-pi-server-load-indicator-5x-led
+
+
+## LED animation example source
 
 ![LED animation with Raspberry Pi 2](/docs/raspberry_pi2_led_animation.gif?raw=true)
 
